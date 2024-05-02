@@ -7,6 +7,8 @@ import bodyParser from 'body-parser';
 import userRoutes from './routes/userRoutes';
 import adminRoutes from './routes/adminRoutes';
 import categoryRoutes from './routes/categoryRoutes';
+import productRoutes from './routes/productRoutes';
+
 
 
 
@@ -22,6 +24,8 @@ app.use(bodyParser.json())
 app.use('/api/v1',userRoutes)
 app.use('/api/v1',adminRoutes)
 app.use('/api/v1',categoryRoutes)
+app.use('/api/v1',productRoutes)
+
 
 
 

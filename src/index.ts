@@ -5,6 +5,9 @@ dotenv.config();
 import mongooseConnection from './connection/db';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/userRoutes';
+import adminRoutes from './routes/adminRoutes';
+import categoryRoutes from './routes/categoryRoutes';
+
 
 
 const app = express();
@@ -17,6 +20,8 @@ mongooseConnection.once('open', () => {
 
 app.use(bodyParser.json())
 app.use('/api/v1',userRoutes)
+app.use('/api/v1',adminRoutes)
+app.use('/api/v1',categoryRoutes)
 
 
 

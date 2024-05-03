@@ -10,8 +10,7 @@ import categoryRoutes from './routes/categoryRoutes';
 import productRoutes from './routes/productRoutes';
 import cartRoutes from './routes/cartRoutes';
 import orderRoutes from './routes/orderRoutes';
-
-
+import productReviewRoutes from './routes/productReviewRoutes';
 
 
 const app = express();
@@ -29,9 +28,7 @@ app.use('/api/v1',categoryRoutes)
 app.use('/api/v1',productRoutes)
 app.use('/api/v1',cartRoutes)
 app.use('/api/v1',orderRoutes)
-
-
-
+app.use('/api/v1',productReviewRoutes)
 
 
 

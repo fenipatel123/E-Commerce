@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 import mongooseConnection from './connection/db';
 import bodyParser from 'body-parser';
+import  specs  from './swaggerConfig';
+import swaggerUi from 'swagger-ui-express'
 import userRoutes from './routes/userRoutes';
 import adminRoutes from './routes/adminRoutes';
 import categoryRoutes from './routes/categoryRoutes';
@@ -22,6 +24,9 @@ mongooseConnection.once('open', () => {
 });
 
 app.use(bodyParser.json())
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
 app.use('/api/v1',userRoutes)
 app.use('/api/v1',adminRoutes)
 app.use('/api/v1',categoryRoutes)
